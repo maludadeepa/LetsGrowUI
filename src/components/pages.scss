@@ -1,0 +1,24 @@
+
+.lg-default-view{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.lg-default-left-panel{
+    flex-grow: 1;
+    height: 100%;
+    border: 1px solid;
+}
+
+.lg-default-main-container{
+    flex-grow: 2;
+    border: 1px solid;
+    height: 100%;
+}
+
+.lg-default-right-panel{
+    flex-grow: 1;
+    height: 100%;
+    border: 1px solid;
+}
