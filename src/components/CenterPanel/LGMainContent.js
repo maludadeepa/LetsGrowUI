@@ -4,9 +4,9 @@ import LGPostArea from './LGPostArea';
 
 const LGMainContent = () => {
     return (
-        <Paper elevation={3} className="lg-default-main-container">
+        <div className="lg-default-main-container">
             <LGPostArea></LGPostArea>
-        </Paper>
+        </div>
     );
 }
 

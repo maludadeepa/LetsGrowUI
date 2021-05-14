@@ -17,13 +17,13 @@ const LGLeftPanel = () => {
             <LGLeftPanelOption Icon={HomeIcon} text="Home" active={true} />
             <LGLeftPanelOption Icon={SearchIcon} text="Explore" />
             <LGLeftPanelOption Icon={NotificationsNoneIcon} text="Notifications" />
-            <LGLeftPanelOption Icon={MailOutlineIcon} text="Messages" />
+            {/* <LGLeftPanelOption Icon={MailOutlineIcon} text="Messages" /> */}
             <LGLeftPanelOption Icon={BookmarkBorderIcon} text="Bookmarks" />
             <LGLeftPanelOption Icon={ListAltIcon} text="Lists" />
             <LGLeftPanelOption Icon={PermIdentityIcon} text="Profile" />
-            <LGLeftPanelOption Icon={MoreHorizIcon} text="More" />
+            {/* <LGLeftPanelOption Icon={MoreHorizIcon} text="More" /> */}
 
-            <Button variant="outlined" className="" fullWidth> Add New Post</Button>
+            <Button variant="outlined" className="sidebar__tweet" fullWidth> Add New Post</Button>
         </Paper>
     );
 }

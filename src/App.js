@@ -1,6 +1,6 @@
-import './App.css';
-import SearchAppBar from './components/LGSearchAppBar';
-import Defaultpage from './components/LGDefaultpage';
+import './App.scss';
+import SearchAppBar from './components/Common/LGSearchAppBar';
+import Defaultpage from './components/Common/LGDefaultpage';
 
 function App() {
   return (
