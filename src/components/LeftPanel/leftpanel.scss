@@ -1,6 +1,6 @@
 @import '../../lg-them.scss';
 
-.sidebar__tweet {
+.sidebar-post-button{
     background-color: $lg-them-color !important;
     border: none !important;
     color: rgb(12, 11, 11) !important;
@@ -8,7 +8,7 @@
     text-transform: inherit !important;
     border-radius: 10px !important;
     height: 50px !important;
-    margin-top: 30px !important;
+    margin-bottom: 20px !important;
 }
 .sidebar {
     border-right: 1px solid $lg-them-color;

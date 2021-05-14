@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link , useHistory } from 'react-router-dom';
 import { Avatar } from "@material-ui/core";
 import {
   ChatBubbleOutline,
@@ -18,6 +19,7 @@ import "./mainPanel.scss";
 
 export default function LGPostView({ post }) {
   const [expanded, setExpanded] = React.useState(false);
+  const history = useHistory();
 
   return (
     <Paper elevation={3} className="post">
@@ -48,7 +50,7 @@ export default function LGPostView({ post }) {
 
           <div className="post-footer-right">
             <ScreenShareOutlinedIcon />
-            <MapIcon />
+            <MapIcon  onClick={() => history.push("/showinmap")} />
             <ImportContactsOutlinedIcon />
             <FavoriteBorder />
           </div>
