@@ -1,7 +1,7 @@
 
 import React from 'react';
-import LGLeftPanel from './LGLeftPanel';
-import LGMainContent from './LGMainContent';
+import LGLeftPanel from './LeftPanel/LGLeftPanel';
+import LGMainContent from './CenterPanel/LGMainContent';
 import LGRightPanel from './LGRightPanel';
 import './pages.scss'
 

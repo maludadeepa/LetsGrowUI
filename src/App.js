@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import SearchAppBar from './components/LGSearchAppBar';
 import Defaultpage from './components/LGDefaultpage';

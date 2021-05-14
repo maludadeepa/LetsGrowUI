@@ -6,19 +6,22 @@
     flex-direction: row;
 }
 .lg-default-left-panel{
-    flex-grow: 1;
+    width: 20%;
     height: 100%;
-    border: 1px solid;
+    margin: 5px;
+    // border: 1px solid;
 }
 
 .lg-default-main-container{
-    flex-grow: 2;
-    border: 1px solid;
+    flex-grow: 1;
+    margin: 5px;
+    // border: 1px solid;
     height: 100%;
 }
 
 .lg-default-right-panel{
-    flex-grow: 1;
+    width: 40%;
     height: 100%;
-    border: 1px solid;
+    margin: 5px;
+    // border: 1px solid;
 }
