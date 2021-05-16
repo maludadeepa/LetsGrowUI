@@ -21,8 +21,8 @@ const LGPostText = ({ text }) => {
   const [showfull , setShowFull] = useState(false)
   return (
     <React.Fragment>
-      {showfull ?  <p>{text}< button  onClick={()=>setShowFull(false)}> Show less...</button ></p> :
-      <TextTruncate line={3} element="span" truncateText="…" text={text} textTruncateChild={< button  onClick={()=>setShowFull(true)}> Show More...</button >}></TextTruncate >
+      {showfull ?  <p>{text}<button  className="lg-post-text-show-more" onClick={()=>setShowFull(false)}> Show less</button ></p> :
+      <TextTruncate line={3} element="span" truncateText="…" text={text} textTruncateChild={<button  className="lg-post-text-show-more" onClick={()=>setShowFull(true)}> Show More</button >}></TextTruncate >
   }
     </React.Fragment>
   )
@@ -35,7 +35,7 @@ export default function LGPostView({ post }) {
   const history = useHistory();
 
   return (
-    <Paper elevation={3} className="post">
+    <Paper elevation={1} className="post">
       <div className="post-avatar">
         <Avatar src={post.author.avatar} />
       </div>

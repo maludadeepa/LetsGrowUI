@@ -22,7 +22,7 @@ const LGLeftPanel = () => {
             <div onClick={() => history.push("/notifications")}><LGLeftPanelOption Icon={NotificationsNoneIcon} text="Notifications" /></div>
             {/* <LGLeftPanelOption Icon={MailOutlineIcon} text="Messages" /> */}
             <div onClick={() => history.push("/bookmarks")}><LGLeftPanelOption Icon={BookmarkBorderIcon} text="Bookmarks" /></div>
-            <div onClick={() => history.push("/lists")}><LGLeftPanelOption Icon={ListAltIcon} text="Lists" /></div>
+            {/* <div onClick={() => history.push("/lists")}><LGLeftPanelOption Icon={ListAltIcon} text="Lists" /></div> */}
             <div onClick={() => history.push("/profile")}><LGLeftPanelOption Icon={PermIdentityIcon} text="Profile" /></div>
             {/* <LGLeftPanelOption Icon={MoreHorizIcon} text="More" /> */}
             </div>

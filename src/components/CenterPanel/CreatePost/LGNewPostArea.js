@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { FormControl, TextField, InputLabel , Select , MenuItem} from '@material-ui/core';
+import { FormControl, TextField, InputLabel, Select, MenuItem, Button } from '@material-ui/core';
 import LGCreatePostText from './LGCreatePostText';
+import SaveIcon from '@material-ui/icons/Save';
 import './createpost.scss'
 
 const LGNewPostArea = () => {
@@ -10,12 +11,12 @@ const LGNewPostArea = () => {
 
     const handleChange = (event) => {
         setTopic(event.target.value);
-      };
+    };
 
     return (
         <form className="lg-create-post" onSubmit="">
 
-            <InputLabel htmlFor="my-input">Create New Post</InputLabel>
+            <h4>Create New Post</h4>
 
             <TextField
                 id="filled-full-width"
@@ -44,7 +45,7 @@ const LGNewPostArea = () => {
             </FormControl>
 
             <FormControl variant="filled" className="lg-create-post-agegrp">
-                
+
                 <InputLabel id="demo-simple-select-label1">Age Group</InputLabel>
                 <Select labelId="demo-simple-select-label1" id="demo-simple-select1"
                     value={topic}
@@ -57,7 +58,14 @@ const LGNewPostArea = () => {
             </FormControl>
 
             <LGCreatePostText content={textContent} setContent={setTextContent}></LGCreatePostText>
-            <input type="submit" value="Submit" />
+            <div className="lg-create-post-submit">
+                <Button style={{float: "right"}}
+                    variant="contained"
+                    color="primary"
+                    size="large"
+                    startIcon={<SaveIcon />}
+                >Save</Button>
+            </div>
         </form>
     );
 }

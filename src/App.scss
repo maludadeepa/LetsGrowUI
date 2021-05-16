@@ -1,9 +1,13 @@
+@import "./lg-them.scss";
 
 .App {
   /* text-align: center; */
   display: flex;
   flex-direction: column;
   height: 100vh;
+  .MuiAppBar-colorPrimary , .MuiButton-containedPrimary{
+    background-color: $lg-background;
+  }
 }
 
 .body{
