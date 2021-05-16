@@ -1,5 +1,5 @@
 import React from 'react';
-import postData from '../../service/postData';
+import postData from '../../../service/postData';
 import LGPostView from './LGPostView';
 
 const LGPostArea = () => {

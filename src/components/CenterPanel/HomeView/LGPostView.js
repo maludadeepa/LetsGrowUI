@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link , useHistory } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import { Avatar } from "@material-ui/core";
 import {
   ChatBubbleOutline,
@@ -13,8 +13,20 @@ import MapIcon from '@material-ui/icons/Map';
 import ScreenShareOutlinedIcon from '@material-ui/icons/ScreenShareOutlined';
 import ImportContactsOutlinedIcon from '@material-ui/icons/ImportContactsOutlined';
 import AssignmentOutlinedIcon from '@material-ui/icons/AssignmentOutlined';
-import "./mainPanel.scss";
+import "../mainPanel.scss";
 import TextTruncate from 'react-text-truncate';
+
+
+const LGPostText = ({ text }) => {
+  const [showfull , setShowFull] = useState(false)
+  return (
+    <React.Fragment>
+      {showfull ?  <p>{text}< button  onClick={()=>setShowFull(false)}> Show less...</button ></p> :
+      <TextTruncate line={3} element="span" truncateText="…" text={text} textTruncateChild={< button  onClick={()=>setShowFull(true)}> Show More...</button >}></TextTruncate >
+  }
+    </React.Fragment>
+  )
+}
 
 
 
@@ -40,8 +52,7 @@ export default function LGPostView({ post }) {
           </div>
           <div className="post-headerDescription">
             <h4>{post.title}</h4>
-            {/* <p>{post.body}</p> */}
-            <TextTruncate line={3} element="span" truncateText="…" text={post.body} textTruncateChild={<a href="#">Read on</a>}></TextTruncate>
+            <LGPostText text={post.body}/>
           </div>
         </div>
         {post.image && <img src={post.image} alt="" />}
@@ -52,7 +63,7 @@ export default function LGPostView({ post }) {
 
           <div className="post-footer-right">
             <ScreenShareOutlinedIcon />
-            <MapIcon  onClick={() => history.push("/showinmap")} />
+            <MapIcon onClick={() => history.push("/showinmap")} />
             <ImportContactsOutlinedIcon />
             <FavoriteBorder />
           </div>

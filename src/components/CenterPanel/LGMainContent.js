@@ -1,6 +1,6 @@
 import React from 'react';
 import {Switch , Route } from 'react-router-dom';
-import LGPostArea from './LGPostArea';
+import LGPostArea from './HomeView/LGPostArea';
 import LGProfileArea from './LGProfileArea';
 import LGNewPostArea  from './CreatePost/LGNewPostArea';
 import LGBookMarkArea from './LGBookMarkArea';
