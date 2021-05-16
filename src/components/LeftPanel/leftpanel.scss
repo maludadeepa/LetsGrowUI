@@ -25,7 +25,7 @@
     border-radius: 10px;
 }
 .leftpanel-option:hover {
-    background-color: #e8f5fe;
+    background-color: $lg-list-item-bgcolor;
     color: var($lg-them-color);
     transition: color 100ms ease-out;
 }

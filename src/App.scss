@@ -8,6 +8,10 @@
   .MuiAppBar-colorPrimary , .MuiButton-containedPrimary{
     background-color: $lg-background;
   }
+  .MuiFilledInput-root{
+    background-color: $lg-list-item-bgcolor;
+  }
+
 }
 
 .body{
