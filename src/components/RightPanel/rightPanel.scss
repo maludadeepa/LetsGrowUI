@@ -1,0 +1,9 @@
+@import "../../lg-them.scss";
+
+.lg-right-admins,
+.lg-right-topics {
+    margin: 10px;
+    padding: 10px;
+    background-color: $lg-list-item-bgcolor;
+    border-radius: 10px;
+}

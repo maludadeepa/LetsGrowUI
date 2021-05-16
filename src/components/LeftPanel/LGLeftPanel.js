@@ -15,7 +15,7 @@ import { Button } from "@material-ui/core";
 const LGLeftPanel = () => {
     const history = useHistory();
     return (
-        <Paper elevation={3} className="lg-default-left-panel">
+        <div elevation={3} className="lg-default-left-panel">
             <div>
             <div onClick={() => history.push("/home")}><LGLeftPanelOption Icon={HomeIcon} text="Home" active={true} /></div>
             <div onClick={() => history.push('/explore')}><LGLeftPanelOption Icon={SearchIcon} text="Explore"/></div>
@@ -30,7 +30,7 @@ const LGLeftPanel = () => {
 
             <Button variant="outlined"  component={Link}  to="/newpost" className="sidebar-post-button" fullWidth> Add New Post</Button>
 
-        </Paper>
+        </div>
     );
 }
 

@@ -14,6 +14,7 @@ import ScreenShareOutlinedIcon from '@material-ui/icons/ScreenShareOutlined';
 import ImportContactsOutlinedIcon from '@material-ui/icons/ImportContactsOutlined';
 import AssignmentOutlinedIcon from '@material-ui/icons/AssignmentOutlined';
 import "./mainPanel.scss";
+import TextTruncate from 'react-text-truncate';
 
 
 
@@ -39,10 +40,11 @@ export default function LGPostView({ post }) {
           </div>
           <div className="post-headerDescription">
             <h4>{post.title}</h4>
-            <p>{post.body}</p>
+            {/* <p>{post.body}</p> */}
+            <TextTruncate line={3} element="span" truncateText="…" text={post.body} textTruncateChild={<a href="#">Read on</a>}></TextTruncate>
           </div>
         </div>
-        <img src={post.image} alt="" />
+        {post.image && <img src={post.image} alt="" />}
         <div className="post-footer">
           <div className="post-footer-left">
             <ChatBubbleOutline />
