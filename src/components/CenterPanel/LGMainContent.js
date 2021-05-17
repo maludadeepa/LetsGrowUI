@@ -8,6 +8,7 @@ import LGNotificationArea from './LGNotificationArea';
 import LGMapArea from './LGMapArea';
 import LGExploreArea from './LGExploreArea';
 import LGAdminsArea from './LGAdminsArea';
+import LGRegisterArea from './LGRegisterArea';
 
 const LGMainContent = () => {
     return (
@@ -19,6 +20,7 @@ const LGMainContent = () => {
                 <Route exact path="/newpost" component={LGNewPostArea}/>
                 <Route exact path="/showinmap" component={LGMapArea}/>
                 <Route exact path="/explore" component={LGExploreArea}/>
+                <Route exact path="/register" component={LGRegisterArea}/>
                 <Route exact path="/admins" component={LGAdminsArea}/>
                 <Route exact path="/home" component={LGPostArea}/>
                 <Route component={LGPostArea}/>

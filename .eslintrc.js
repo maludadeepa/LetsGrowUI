@@ -12,5 +12,8 @@ module.exports = {
         sourceType: 'module'
     },
     plugins: ['react'],
-    rules: {}
+    rules: {
+        "no-unused-vars": [1],
+        "react/prop-types": [1]
+    }
 };
