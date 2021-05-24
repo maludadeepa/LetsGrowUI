@@ -1,5 +1,6 @@
 import React from "react";
 import "./leftpanel.scss";
+import Survey from './testfile'
 
 export default function LGLeftPanelOption({ text, Icon, active }) {
   return (

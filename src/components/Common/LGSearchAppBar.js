@@ -14,7 +14,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-import { useHistory } from 'react-router';
+import getEnvVal from '../../service/constants'
 
 const useStyles = makeStyles((theme) => ({
     grow: {
@@ -120,8 +120,8 @@ export default function PrimarySearchAppBar() {
         >
             { logedIn ? <MenuItem onClick={handleMenuClose}>Profile</MenuItem> :
                 <div>
-                    <MenuItem onClick={() => window.location.href = 'http://127.0.0.1:5000/auth/login'}>Sign In</MenuItem>
-                    <MenuItem onClick={() => window.location.href = 'http://127.0.0.1:5000/auth/login'}>Register</MenuItem>
+                    <MenuItem onClick={() => window.location.href = getEnvVal().login_url}>Sign In</MenuItem>
+                    <MenuItem onClick={() => window.location.href = getEnvVal().login_url}>Register</MenuItem>
                 </div>
             }
 
@@ -182,7 +182,7 @@ export default function PrimarySearchAppBar() {
                     >
                         <MenuIcon />
                     </IconButton> */}
-                    <Typography className={classes.title} variant="h6" noWrap> Let's Grow </Typography>
+                    <Typography className={classes.title} variant="h6" noWrap> Lets Grow </Typography>
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
                             <SearchIcon />

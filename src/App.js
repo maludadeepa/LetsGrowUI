@@ -1,4 +1,5 @@
 import './App.scss';
+import React from 'react';
 import SearchAppBar from './components/Common/LGSearchAppBar';
 import Defaultpage from './components/Common/LGDefaultpage';
 
