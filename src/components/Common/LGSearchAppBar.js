@@ -11,10 +11,11 @@ import Menu from '@material-ui/core/Menu';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
+import Avatar from '@material-ui/core/Avatar';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-import getEnvVal from '../../service/constants'
+import getEnvVal from '../../service/constants';
 
 const useStyles = makeStyles((theme) => ({
     grow: {
@@ -163,7 +164,8 @@ export default function PrimarySearchAppBar() {
                     aria-haspopup="true"
                     color="inherit"
                 >
-                    <AccountCircle />
+                    <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+                    {/* <AccountCircle /> */}
                 </IconButton>
                 <p>Profile</p>
             </MenuItem>
@@ -174,14 +176,6 @@ export default function PrimarySearchAppBar() {
         <div className={classes.grow}>
             <AppBar position="static">
                 <Toolbar>
-                    {/* <IconButton
-                        edge="start"
-                        className={classes.menuButton}
-                        color="inherit"
-                        aria-label="open drawer"
-                    >
-                        <MenuIcon />
-                    </IconButton> */}
                     <Typography className={classes.title} variant="h6" noWrap> Lets Grow </Typography>
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
@@ -211,7 +205,8 @@ export default function PrimarySearchAppBar() {
                             onClick={handleProfileMenuOpen}
                             color="inherit"
                         >
-                            <AccountCircle />
+                            <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+                            {/* <AccountCircle /> */}
                         </IconButton>
                     </div>
                     <div className={classes.sectionMobile}>

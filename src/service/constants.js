@@ -1,30 +1,21 @@
 
-const DEV_ENV={
-    login_url : "http://letsgrow.com:5000/auth/login",
-}
+const getEnvVal = () => {
 
-const INT_ENV={
-    login_url : "",
-}
-
-const TEST_ENV={
-    login_url : "",
-}
-
-const PROD_ENV={
-    login_url : "",
-}
-
-const getEnvVal = (env="dev") => {
-    switch (env) {
-        case "dev":
-            return DEV_ENV;
-        case "int":
-            return INT_ENV;
+    switch (process.env.NODE_ENV) {
+        case "development":
+            return {
+                login_url : "http://letsgrow.com:5000/auth/login",
+                api_url : "http://letsgrow.com:5000",
+            }
         case "test":
-            return TEST_ENV;
-        case "prod":
-            return PROD_ENV;
+            return {
+                login_url : "http://letsgrow.com:5000/auth/login",
+            };
+        case "production":
+            return {
+                login_url : "http://kiribul/auth/login",
+                api_url : "http://api.kiribul.com",
+            };
         default:
             break;
     }

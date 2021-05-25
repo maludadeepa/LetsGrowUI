@@ -9,12 +9,14 @@ import LGMapArea from './LGMapArea';
 import LGExploreArea from './LGExploreArea';
 import LGAdminsArea from './LGAdminsArea';
 import LGRegisterArea from './LGRegisterArea';
+import LGDashboardArea from './LGDashboardArea'
 
 const LGMainContent = () => {
     return (
         <div className="lg-default-main-container">
             <Switch>
                 <Route exact path="/profile" component={LGProfileArea}/>
+                <Route exact path="/Analytics" component={LGDashboardArea}/>
                 <Route exact path="/Notifications" component={LGNotificationArea}/>
                 <Route exact path="/bookmarks" component={LGBookMarkArea}/>
                 <Route exact path="/newpost" component={LGNewPostArea}/>

@@ -3,6 +3,7 @@ import { Link , useHistory } from 'react-router-dom';
 import LGLeftPanelOption from './LGLeftPanelOption'
 import Paper from "@material-ui/core/Paper"
 import HomeIcon from "@material-ui/icons/Home";
+import BarChartIcon from '@material-ui/icons/BarChart';
 import SearchIcon from "@material-ui/icons/Search";
 import NotificationsNoneIcon from "@material-ui/icons/NotificationsNone";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
@@ -18,6 +19,7 @@ const LGLeftPanel = () => {
         <div elevation={3} className="lg-default-left-panel">
             <div>
             <div onClick={() => history.push("/home")}><LGLeftPanelOption Icon={HomeIcon} text="Home" active={true} /></div>
+            <div onClick={() => history.push("/Analytics")}><LGLeftPanelOption Icon={BarChartIcon} text="Analytics" active={true} /></div>
             <div onClick={() => history.push('/explore')}><LGLeftPanelOption Icon={SearchIcon} text="Explore"/></div>
             <div onClick={() => history.push("/notifications")}><LGLeftPanelOption Icon={NotificationsNoneIcon} text="Notifications" /></div>
             {/* <LGLeftPanelOption Icon={MailOutlineIcon} text="Messages" /> */}
@@ -28,7 +30,7 @@ const LGLeftPanel = () => {
             </div>
 
 
-            <Button variant="outlined"  component={Link}  to="/newpost" className="sidebar-post-button" fullWidth> Add New Post</Button>
+            <Button variant="contained" color="primary" component={Link}  to="/newpost" className="sidebar-post-button" fullWidth> Add New Post</Button>
 
         </div>
     );
