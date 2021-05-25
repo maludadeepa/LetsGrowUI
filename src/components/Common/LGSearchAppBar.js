@@ -8,15 +8,14 @@ import InputBase from '@material-ui/core/InputBase';
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-import AccountCircle from '@material-ui/icons/AccountCircle';
 import Avatar from '@material-ui/core/Avatar';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import getEnvVal from '../../service/constants';
-import { AppContext } from '../../service/LGAppContext';
+import { AppContext, default_context } from '../../service/LGAppContext';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     grow: {
@@ -82,13 +81,34 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+
+const LGProfileMenu = () => {
+    const history = useHistory();
+    const logOut = (event) => {
+        console.log("log out called");
+    }
+
+    return (
+        <AppContext.Consumer>
+            {([appCtx, setAppCtx]) => appCtx.user_session.status ?
+                <div>
+                    <MenuItem onClick={() => history.push("/profile")}>Profile</MenuItem>
+                    <MenuItem onClick={() => setAppCtx(default_context)}>Log Out</MenuItem>
+                </div> : <div>
+                    <MenuItem onClick={() => window.location.href = getEnvVal().login_url}>Sign In</MenuItem>
+                    <MenuItem onClick={() => window.location.href = getEnvVal().login_url}>Register</MenuItem>
+                </div>
+            }
+        </AppContext.Consumer>
+    );
+}
+
+
 export default function PrimarySearchAppBar() {
     const classes = useStyles();
-    const [logedIn, setLoggedIn] = useState(false);
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
-    // const appCtx= React.useContext(AppContext);
     const isMenuOpen = Boolean(anchorEl);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -118,16 +138,8 @@ export default function PrimarySearchAppBar() {
             keepMounted
             transformOrigin={{ vertical: 'top', horizontal: 'right' }}
             open={isMenuOpen}
-            onClose={handleMenuClose}
-        >
-            { logedIn ? <MenuItem onClick={handleMenuClose}>Profile</MenuItem> :
-                <div>
-                    <MenuItem onClick={() => window.location.href = getEnvVal().login_url}>Sign In</MenuItem>
-                    <MenuItem onClick={() => window.location.href = getEnvVal().login_url}>Register</MenuItem>
-                </div>
-            }
-
-            {/* <MenuItem onClick={handleMenuClose}>My account</MenuItem> */}
+            onClose={handleMenuClose}>
+            <LGProfileMenu />
         </Menu>
     );
 
@@ -140,8 +152,7 @@ export default function PrimarySearchAppBar() {
             keepMounted
             transformOrigin={{ vertical: 'top', horizontal: 'right' }}
             open={isMobileMenuOpen}
-            onClose={handleMobileMenuClose}
-        >
+            onClose={handleMobileMenuClose}>
             <MenuItem>
                 <IconButton aria-label="show 4 new mails" color="inherit">
                     <Badge badgeContent={4} color="secondary">
@@ -163,10 +174,10 @@ export default function PrimarySearchAppBar() {
                     aria-label="account of current user"
                     aria-controls="primary-search-account-menu"
                     aria-haspopup="true"
-                    color="inherit"
-                >
-                    <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
-                    {/* <AccountCircle /> */}
+                    color="inherit">
+                    <AppContext.Consumer>
+                        {([appCtx,]) => <Avatar alt="Cindy Baker" src={appCtx.user_session.user_image} />}
+                    </AppContext.Consumer>
                 </IconButton>
                 <p>Profile</p>
             </MenuItem>
@@ -188,8 +199,7 @@ export default function PrimarySearchAppBar() {
                                 root: classes.inputRoot,
                                 input: classes.inputInput,
                             }}
-                            inputProps={{ 'aria-label': 'search' }}
-                        />
+                            inputProps={{ 'aria-label': 'search' }} />
                     </div>
                     <div className={classes.grow} />
                     <div className={classes.sectionDesktop}>
@@ -204,12 +214,10 @@ export default function PrimarySearchAppBar() {
                             aria-controls={menuId}
                             aria-haspopup="true"
                             onClick={handleProfileMenuOpen}
-                            color="inherit"
-                        >
+                            color="inherit">
                             <AppContext.Consumer>
-                                {appCtx => <Avatar alt="Cindy Baker" src={appCtx.user_session.user_image} />}
+                                {([appCtx,]) => <Avatar alt="Cindy Baker" src={appCtx.user_session.user_image} />}
                             </AppContext.Consumer>
-                            {/* <AccountCircle />  */}
                         </IconButton>
                     </div>
 
