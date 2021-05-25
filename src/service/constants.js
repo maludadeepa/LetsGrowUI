@@ -1,6 +1,7 @@
 
 const getEnvVal = () => {
 
+    // eslint-disable-next-line no-undef
     switch (process.env.NODE_ENV) {
         case "development":
             return {

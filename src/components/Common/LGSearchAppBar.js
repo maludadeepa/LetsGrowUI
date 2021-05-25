@@ -16,6 +16,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import getEnvVal from '../../service/constants';
+import { AppContext } from '../../service/LGAppContext';
 
 const useStyles = makeStyles((theme) => ({
     grow: {
@@ -87,7 +88,7 @@ export default function PrimarySearchAppBar() {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
-
+    // const appCtx= React.useContext(AppContext);
     const isMenuOpen = Boolean(anchorEl);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -205,11 +206,15 @@ export default function PrimarySearchAppBar() {
                             onClick={handleProfileMenuOpen}
                             color="inherit"
                         >
-                            <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
-                            {/* <AccountCircle /> */}
+                            <AppContext.Consumer>
+                                {appCtx => <Avatar alt="Cindy Baker" src={appCtx.user_session.user_image} />}
+                            </AppContext.Consumer>
+                            {/* <AccountCircle />  */}
                         </IconButton>
                     </div>
+
                     <div className={classes.sectionMobile}>
+
                         <IconButton
                             aria-label="show more"
                             aria-controls={mobileMenuId}
@@ -218,8 +223,10 @@ export default function PrimarySearchAppBar() {
                             color="inherit"
                         >
                             <MoreIcon />
+
                         </IconButton>
                     </div>
+
                 </Toolbar>
             </AppBar>
             {renderMobileMenu}
