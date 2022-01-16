@@ -5,12 +5,12 @@ const getEnvVal = () => {
     switch (process.env.NODE_ENV) {
         case "development":
             return {
-                login_url : "http://letsgrow.com:5000/auth/login",
-                api_url : "http://letsgrow.com:5000",
+                login_url : "http://da-papers.com:5000/auth/login",
+                api_url : "http://da-papers.com:5000",
             }
         case "test":
             return {
-                login_url : "http://letsgrow.com:5000/auth/login",
+                login_url : "http://da-papers.com:5000/auth/login",
             };
         case "production":
             return {

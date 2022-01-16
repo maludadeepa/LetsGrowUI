@@ -5,10 +5,10 @@ import '../Common/common.scss';
 import { Button }  from '@material-ui/core';
 
 const topics = [
-    { "text": "Drawing" },
-    { "text": "School" },
-    { "text": "Kid cooking" },
-    { "text": "Games" }
+    { "text": "Corona Virus" },
+    { "text": "Heart Research" },
+    { "text": "Cancer Research" },
+    { "text": "Staying young" }
 ]
 
 export const LGTopic = ({ topic }) => {

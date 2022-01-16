@@ -37,21 +37,8 @@ const LGNewPostArea = () => {
                     value={topic}
                     onChange={handleChange}>
                     <MenuItem value=""><em>None</em></MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
-                </Select>
-            </FormControl>
-
-            <FormControl variant="filled" className="lg-create-post-agegrp">
-
-                <InputLabel id="demo-simple-select-label1">Age Group</InputLabel>
-                <Select labelId="demo-simple-select-label1" id="demo-simple-select1"
-                    value={topic}
-                    onChange={handleChange}>
-                    <MenuItem value=""><em>None</em></MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
+                    <MenuItem value={10}>Cancer Research</MenuItem>
+                    <MenuItem value={20}>Corona Virus Research</MenuItem>
                     <MenuItem value={30}>Thirty</MenuItem>
                 </Select>
             </FormControl>
